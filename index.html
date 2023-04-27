@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Life Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+    }
+
+    .form-container {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      color: #333;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .form-group button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+
+    .image-container {
+      flex: 1;
+      padding-left: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .form-container,
+      .image-container {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h1 align="center">Machine Learning Project</h1>
+      <h2 align="center">Title: Emotion Detection from Text using ML</h2>
+      <form action="/result" method = "POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="personal-life">Tell us about your Personal Life</label>
+          <textarea id="personal-life" name="q1" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="professional-life">Tell us about your Professional Life</label>
+          <textarea id="professional-life" name="q2" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="how-is-life">Tell us something about Yourself.</label>
+          <textarea id="how-is-life" name="q3" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+</body>
+
+</html>

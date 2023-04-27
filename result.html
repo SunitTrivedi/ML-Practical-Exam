@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Suggestion</title>
+	<style>
+		body {
+			background-color: #f7f7f7;
+			font-family: Arial, sans-serif;
+			color: #333;
+		}
+		.container {
+			margin: 0 auto;
+			padding: 20px;
+			max-width: 600px;
+		}
+		h1 {
+			font-size: 32px;
+			text-align: center;
+			margin-top: 0;
+		}
+		p {
+			font-size: 20px;
+			margin: 10px 0;
+		}
+		button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 20px;
+			transition: background-color 0.3s ease;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 30px;
+			height: 0;
+			overflow: hidden;
+		}
+		.video-container iframe,
+		.video-container object,
+		.video-container embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<script>
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				height: '360',
+				width: '640',
+				videoId: '{{ video_id }}',
+				playerVars: {
+					'autoplay': 1,
+					'controls': 0,
+					'rel': 0,
+					'showinfo': 0
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Video Suggestion</h1>
+		<p>Based on your inputs, we suggest the following video:</p>
+		<div class="video-container">
+			<div id="player"></div>
+		</div>
+		<p><strong>{{ suggestion }}</strong></p>
+		<button onclick="window.history.back()">Go Back</button>
+	</div>
+</body>
+</html>
